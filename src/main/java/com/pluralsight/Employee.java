@@ -4,10 +4,10 @@ public class Employee {
     private int employeeId;
     private String name;
     private double hoursWorked;
-    private int payRate;
+    private double payRate;
 
     //constructor for Employee class
-    public Employee(int employeeId, String name, double hoursWorked, int payRate) {
+    public Employee(int employeeId, String name, double hoursWorked, double payRate) {
         this.employeeId = employeeId;
         this.name = name;
         this.hoursWorked = hoursWorked;
@@ -38,7 +38,7 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
-    public int getPayRate() {
+    public double getPayRate() {
         return payRate;
     }
 
@@ -49,5 +49,12 @@ public class Employee {
     public double GrossPay(){
         double grossPay = (double)this.hoursWorked * this.payRate;
         return grossPay;
+    }
+    // added a tostring method to read
+    public String toString() {
+        return "ID: " + getEmployeeId()
+                + " | Name: " + getName()
+                + " | Hours: " + getHoursWorked()
+                + " | Pay Rate: $" + getPayRate();
     }
 }
